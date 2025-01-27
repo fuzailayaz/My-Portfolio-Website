@@ -15,7 +15,11 @@ export default function Header() {
           className="md:hidden p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <div className={`space-y-2 transform transition-transform duration-300 ${isMenuOpen ? 'rotate-45' : ''}`}>
+          <div
+            className={`space-y-2 transform transition-transform duration-300 ${
+              isMenuOpen ? 'rotate-45 translate-y-2' : ''
+            }`}
+          >
             <span className="block w-8 h-1 bg-white"></span>
             <span className="block w-8 h-1 bg-white"></span>
             <span className="block w-8 h-1 bg-white"></span>
@@ -23,7 +27,9 @@ export default function Header() {
         </button>
 
         {/* Navigation Menu */}
-        <nav className={`md:flex space-x-6 ${isMenuOpen ? 'block' : 'hidden'} md:block font-poppins text-lg`}>
+        <nav
+          className={`md:flex space-x-6 ${isMenuOpen ? 'block' : 'hidden'} md:block font-poppins text-lg`}
+        >
           <a href="#about" className="hover:text-gray-300">About</a>
           <a href="#projects" className="hover:text-gray-300">Projects</a>
           <a href="#contact" className="hover:text-gray-300">Contact</a>

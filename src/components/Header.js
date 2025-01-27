@@ -1,66 +1,65 @@
-'use client';
-
+'use client'
 import { useState } from 'react';
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // State for toggling the menu
 
   return (
-    <header className="bg-blue-600 text-white p-4">
-      <div className="flex justify-between items-center max-w-6xl mx-auto relative">
-        {/* Logo aligned to the left */}
-        <h1 className="text-3xl font-bold font-poppins">My Portfolio</h1>
+    <header className="bg-blue-600 text-white px-6 py-4 shadow-md">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <div className="text-2xl font-bold px-4 py-2 rounded-lg">
+          My Portfolio
+        </div>
 
-        {/* Hamburger Menu */}
+        {/* Hamburger Menu Button */}
         <button
-          className="md:hidden p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="block lg:hidden text-white focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          <div
-            className={`space-y-2 transform transition-all duration-300 ${
-              isMenuOpen ? 'open' : ''
-            }`}
-          >
-            {/* Top bar */}
-            <span
-              className={`block w-8 h-1 bg-white transition-all duration-300 ${
-                isMenuOpen ? 'translate-y-1' : ''
-              }`}
-            ></span>
-            {/* Middle bar */}
-            <span
-              className={`block w-8 h-1 bg-white transition-all duration-300 ${
-                isMenuOpen ? 'opacity-0' : ''
-              }`}
-            ></span>
-            {/* Bottom bar */}
-            <span
-              className={`block w-8 h-1 bg-white transition-all duration-300 ${
-                isMenuOpen ? '-translate-y-1' : ''
-              }`}
-            ></span>
-          </div>
+          <div className={`h-1 w-6 bg-white my-1 transition-transform ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <div className={`h-1 w-6 bg-white my-1 transition-opacity ${isOpen ? "opacity-0" : ""}`} />
+          <div className={`h-1 w-6 bg-white my-1 transition-transform ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
 
-        {/* Navigation Menu */}
+        {/* Navigation Links */}
         <nav
-          className={`md:flex md:space-x-6 ${
-            isMenuOpen ? 'block' : 'hidden'
-          } bg-blue-600 md:block font-poppins text-lg w-full mt-2 md:mt-0 md:ml-4 absolute top-full left-0 md:static md:w-auto md:flex-row`}
-          style={{
-            position: 'absolute',
-            top: 'calc(100% + 10px)', // Position the menu right below the hamburger icon
-            left: '0',
-            width: 'auto', // Ensures the dropdown is not too wide
-            zIndex: '999', // Ensure it appears on top of other content
-          }}
+          className={`lg:flex space-x-6 absolute lg:static top-16 left-0 w-full bg-blue-500 lg:bg-transparent lg:w-auto lg:p-0 ${
+            isOpen ? "block" : "hidden"
+          }`}
         >
-          <a href="#about" className="hover:text-gray-300 block py-2 px-4">About</a>
-          <a href="#projects" className="hover:text-gray-300 block py-2 px-4">Projects</a>
-          <a href="#contact" className="hover:text-gray-300 block py-2 px-4">Contact</a>
-          <a href="https://github.com/fuzailayaz" className="hover:text-gray-300 block py-2 px-4">GitHub</a>
-          <a href="https://www.linkedin.com/in/fuzailayaz/" className="hover:text-gray-300 block py-2 px-4">LinkedIn</a>
-          <a href="mailto:mdfuzailayaz95@gmail.com" className="hover:text-gray-300 block py-2 px-4">Email</a>
+          <ul className="flex flex-col lg:flex-row lg:items-center lg:space-x-6 text-white">
+            <li>
+              <a href="#about" className="block px-4 py-2 hover:bg-blue-600 rounded-md">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="block px-4 py-2 hover:bg-blue-600 rounded-md">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="block px-4 py-2 hover:bg-blue-600 rounded-md">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="#github" className="block px-4 py-2 hover:bg-blue-600 rounded-md">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="#linkedin" className="block px-4 py-2 hover:bg-blue-600 rounded-md">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="#email" className="block px-4 py-2 hover:bg-blue-600 rounded-md">
+                Email
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>

@@ -16,14 +16,14 @@ export default function Header() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <div
-            className={`space-y-2 transform transition-transform duration-300 ${
-              isMenuOpen ? 'rotate-45 translate-y-2' : ''
+            className={`space-y-2 transform transition-all duration-300 ${
+              isMenuOpen ? 'open' : ''
             }`}
           >
             {/* Top bar */}
             <span
               className={`block w-8 h-1 bg-white transition-all duration-300 ${
-                isMenuOpen ? 'rotate-45 translate-y-2' : ''
+                isMenuOpen ? 'translate-y-1' : ''
               }`}
             ></span>
             {/* Middle bar */}
@@ -35,7 +35,7 @@ export default function Header() {
             {/* Bottom bar */}
             <span
               className={`block w-8 h-1 bg-white transition-all duration-300 ${
-                isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                isMenuOpen ? '-translate-y-1' : ''
               }`}
             ></span>
           </div>
@@ -43,14 +43,16 @@ export default function Header() {
 
         {/* Navigation Menu */}
         <nav
-          className={`md:flex space-x-6 ${isMenuOpen ? 'block' : 'hidden'} md:block font-poppins text-lg`}
+          className={`md:flex md:space-x-6 ${
+            isMenuOpen ? 'block' : 'hidden'
+          } bg-blue-600 md:block font-poppins text-lg w-full mt-2 md:mt-0`}
         >
-          <a href="#about" className="hover:text-gray-300">About</a>
-          <a href="#projects" className="hover:text-gray-300">Projects</a>
-          <a href="#contact" className="hover:text-gray-300">Contact</a>
-          <a href="https://github.com/fuzailayaz" className="hover:text-gray-300">GitHub</a>
-          <a href="https://www.linkedin.com/in/fuzailayaz/" className="hover:text-gray-300">LinkedIn</a>
-          <a href="mailto:mdfuzailayaz95@gmail.com" className="hover:text-gray-300">Email</a>
+          <a href="#about" className="hover:text-gray-300 block py-2 px-4">About</a>
+          <a href="#projects" className="hover:text-gray-300 block py-2 px-4">Projects</a>
+          <a href="#contact" className="hover:text-gray-300 block py-2 px-4">Contact</a>
+          <a href="https://github.com/fuzailayaz" className="hover:text-gray-300 block py-2 px-4">GitHub</a>
+          <a href="https://www.linkedin.com/in/fuzailayaz/" className="hover:text-gray-300 block py-2 px-4">LinkedIn</a>
+          <a href="mailto:mdfuzailayaz95@gmail.com" className="hover:text-gray-300 block py-2 px-4">Email</a>
         </nav>
       </div>
     </header>

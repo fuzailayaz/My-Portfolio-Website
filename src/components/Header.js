@@ -20,9 +20,24 @@ export default function Header() {
               isMenuOpen ? 'rotate-45 translate-y-2' : ''
             }`}
           >
-            <span className="block w-8 h-1 bg-white"></span>
-            <span className="block w-8 h-1 bg-white"></span>
-            <span className="block w-8 h-1 bg-white"></span>
+            {/* Top bar */}
+            <span
+              className={`block w-8 h-1 bg-white transition-all duration-300 ${
+                isMenuOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
+            ></span>
+            {/* Middle bar */}
+            <span
+              className={`block w-8 h-1 bg-white transition-all duration-300 ${
+                isMenuOpen ? 'opacity-0' : ''
+              }`}
+            ></span>
+            {/* Bottom bar */}
+            <span
+              className={`block w-8 h-1 bg-white transition-all duration-300 ${
+                isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            ></span>
           </div>
         </button>
 

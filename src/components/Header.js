@@ -27,9 +27,9 @@ export default function Header() {
           <a href="#about" className="hover:text-gray-300">About</a>
           <a href="#projects" className="hover:text-gray-300">Projects</a>
           <a href="#contact" className="hover:text-gray-300">Contact</a>
-          <a href="https://github.com/your-username" className="hover:text-gray-300">GitHub</a>
-          <a href="https://www.linkedin.com/in/your-username" className="hover:text-gray-300">LinkedIn</a>
-          <a href="mailto:your-email@example.com" className="hover:text-gray-300">Email</a>
+          <a href="https://github.com/fuzailayaz" className="hover:text-gray-300">GitHub</a>
+          <a href="https://www.linkedin.com/in/fuzailayaz/" className="hover:text-gray-300">LinkedIn</a>
+          <a href="mailto:mdfuzailayaz95@gmail.com" className="hover:text-gray-300">Email</a>
         </nav>
       </div>
     </header>
